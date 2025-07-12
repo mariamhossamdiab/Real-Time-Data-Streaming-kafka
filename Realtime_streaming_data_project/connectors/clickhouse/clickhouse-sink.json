@@ -1,0 +1,24 @@
+{
+  "name": "clickhouse-sink",
+  "config": {
+    "connector.class": "com.clickhouse.kafka.connect.ClickHouseSinkConnector",
+    "tasks.max": "1",
+    "topics": "postgres_cdc.test_db.users,postgres_cdc.test_db.orders",
+    "hostname": "ayze20zzvl.europe-west4.gcp.clickhouse.cloud",
+    "port": "8443",
+    "database": "default",
+    "username": "default",
+    "password": "qL8wSA~2UeZR4",
+    "ssl": "true",
+    "errors.tolerance": "all",
+    "errors.log.enable": "true",
+    "errors.log.include.messages": "true",
+    "behavior.on.error": "log",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false",
+    "consumer.override.auto.offset.reset": "earliest",
+    "consumer.override.group.id": "clickhouse-fresh-$(date +%s)"
+  }
+}

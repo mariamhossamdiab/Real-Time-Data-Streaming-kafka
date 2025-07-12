@@ -1,0 +1,18 @@
+docker exec -it postgres psql -U admin -d admin
+CREATE SCHEMA IF NOT EXISTS test_db;
+ create table test_db.users(
+     _id       text not null
+        primary key,
+     data      jsonb,
+     createdat timestamp with time zone default now());
+INSERT INTO test_db.users (_id, data) VALUES (
+  'u2',
+ '{
+   "name": "Adam",
+    "email": "Adam@example.com"
+  }');
+----
+curl localhost:8083
+curl -X POST http://localhost:8083/connectors   -H "Content-Type: application/json"   -d "@connectors/clickhouse/clickhous
+e-sink.json"
+
