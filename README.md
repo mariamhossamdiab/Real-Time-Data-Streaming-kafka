@@ -4,7 +4,11 @@ database using Debezium, processes them through Apache Kafka, and kafka sink the
 
 ![WhatsApp Image 2025-07-12 at 23 22 55_308f78ca](https://github.com/user-attachments/assets/5f748a08-d330-4c4b-aff9-7f12ec220a75)
 
-
+* Set up a real-time Change Data Capture (CDC) pipeline using Apache Kafka Connect as the integration layer.
+* Connect Postgres as the source database using the Debezium MySQL Connector to capture real-time changes.
+* Debezium publishes all data change events to Kafka topics in a structured format.
+* Deploy the Kafka clickhouse Connector to consume messages from Kafka topics and write them into clickhouse.
+* Run the entire pipeline including postgres , Kafka, Debezium, and connectors using Docker Compose.
 # kafka topics
 
 <img width="1920" height="1080" alt="Screenshot from 2025-07-13 00-42-39" src="https://github.com/user-attachments/assets/e9e318cb-cc11-48ea-b11e-0c248b06124b" />
@@ -18,3 +22,5 @@ database using Debezium, processes them through Apache Kafka, and kafka sink the
 <img width="1920" height="1080" alt="Screenshot from 2025-07-13 00-41-13" src="https://github.com/user-attachments/assets/b697388c-6d72-492c-b324-d4868f2b23d0" />
 
 <img width="1920" height="1080" alt="Screenshot from 2025-07-13 00-41-55" src="https://github.com/user-attachments/assets/2a3691c3-fa83-4cf9-b261-e34a66f08477" />
+# docker containers
+<img width="403" height="453" alt="Screenshot from 2025-07-13 00-33-55" src="https://github.com/user-attachments/assets/3bb00bcf-f266-487f-b93f-99590cbac7d6" />
